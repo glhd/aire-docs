@@ -18,6 +18,8 @@ class BuildCommand extends Command
 	public function handle()
 	{
 		app()->instance('env', 'production');
+		
+		// FIXME: Switch to https when Github is ready
 		config()->set('app.url', 'http://airephp.com');
 		app('url')->forceRootUrl('http://airephp.com/');
 		app('url')->forceScheme('http');
