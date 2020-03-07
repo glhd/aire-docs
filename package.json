@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "css": "tailwind build src/aire.css -c ./tailwind.config.js -o ./public/aire.css",
+    "build": "php artisan build"
+  },
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.0",
+    "tailwindcss": "^1.0.5"
+  }
+}
