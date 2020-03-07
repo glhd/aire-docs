@@ -18,8 +18,8 @@ class BuildCommand extends Command
 	public function handle()
 	{
 		app()->instance('env', 'production');
-		config()->set('app.url', 'https://glhd.github.io/aire/');
-		app('url')->forceRootUrl('https://glhd.github.io/aire/');
+		config()->set('app.url', 'https://airephp.com');
+		app('url')->forceRootUrl('https://airephp.com/');
 		app('url')->forceScheme('https');
 		app('galahad.aire')->resetTheme();
 		

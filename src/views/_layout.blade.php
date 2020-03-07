@@ -10,7 +10,7 @@
 		@yield('page-title') - Aire (Laravel Form Builder)
 	</title>
 	
-	<link rel="stylesheet" href="{{ asset('aire.css') }}" />
+	<link rel="stylesheet" href="{{ asset('aire.css') }}?v={{ app()->environment('production') ? time() : '' }}" />
 	
 	<link rel="stylesheet"
 	      href="https://use.fontawesome.com/releases/v5.12.1/css/solid.css"

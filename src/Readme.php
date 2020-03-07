@@ -18,8 +18,7 @@ class Readme implements Htmlable
 	{
 		config()->set('markdown.html_input', 'allow');
 		
-		// FIXME
-		$readme_markdown = File::get(__DIR__.'/../README.md');
+		$readme_markdown = File::get(base_path('vendor/glhd/aire/README.md'));
 		$readme_html = Markdown::convertToHtml($readme_markdown);
 		$this->crawler = new Crawler($readme_html);
 	}
