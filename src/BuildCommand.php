@@ -18,9 +18,9 @@ class BuildCommand extends Command
 	public function handle()
 	{
 		app()->instance('env', 'production');
-		config()->set('app.url', 'https://airephp.com');
-		app('url')->forceRootUrl('https://airephp.com/');
-		app('url')->forceScheme('https');
+		config()->set('app.url', 'http://airephp.com');
+		app('url')->forceRootUrl('http://airephp.com/');
+		app('url')->forceScheme('http');
 		app('galahad.aire')->resetTheme();
 		
 		$this->buildCSS();
