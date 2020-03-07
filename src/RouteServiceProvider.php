@@ -8,6 +8,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class RouteServiceProvider extends ServiceProvider
@@ -34,6 +35,13 @@ class RouteServiceProvider extends ServiceProvider
 		// These are just for sample code
 		Route::post('/authors', 'AuthorsController@store')->name('authors.store');
 		Route::put('/authors/{author}', 'AuthorsController@update')->name('authors.update');
+		
+		View::share(
+			'css_version',
+			app()->environment('production')
+				? filemtime(base_path('src/aire.css'))
+				: ''
+		);
 		
 		foreach ($files as $filename) {
 			$view = basename($filename, '.blade.php');

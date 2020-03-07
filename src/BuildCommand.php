@@ -19,10 +19,9 @@ class BuildCommand extends Command
 	{
 		app()->instance('env', 'production');
 		
-		// FIXME: Switch to https when Github is ready
-		config()->set('app.url', 'http://airephp.com');
-		app('url')->forceRootUrl('http://airephp.com/');
-		app('url')->forceScheme('http');
+		config()->set('app.url', 'https://airephp.com');
+		app('url')->forceRootUrl('https://airephp.com/');
+		app('url')->forceScheme('https');
 		app('galahad.aire')->resetTheme();
 		
 		$this->buildCSS();
