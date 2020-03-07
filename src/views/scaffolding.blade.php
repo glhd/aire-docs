@@ -18,17 +18,19 @@
 	
 	<div class="flex">
 		<div class="w-3/5 px-1">
-			<h2 class="mb-0">
+			<h2 class="mb-2">
 				Eloquent Model
 			</h2>
-			<pre class="mt-2"><code class="language-php">{{ file_get_contents(__DIR__.'/../Samples/Author.php') }}</code></pre>
+			
+			@sample('Author.php')
 		</div>
 		<div class="w-2/5 px-1">
-			<h2 class="mb-0">
+			<h2 class="mb-2">
 				Create Form
 			</h2>
 			
-			<pre class="mt-2 mb-0"><code class="language-php">@verbatim{{ Aire::scaffold(Author::class) }}@endverbatim</code></pre>
+			@inlineSample(Aire::scaffold(Author::class))
+			
 			<div class="border rounded p-2 mt-2">
 				{{ Aire::scaffold(Docs\Samples\Author::class) }}
 			</div>
@@ -37,7 +39,8 @@
 				Update Form
 			</h2>
 			
-			<pre class="mt-2 mb-0"><code class="language-php">@verbatim{{ Aire::scaffold(Author::find(1)) }}@endverbatim</code></pre>
+			@inlineSample(Aire::scaffold(Author::find(1)))
+			
 			<?php
 			$author = new Docs\Samples\Author();
 			$author->setRawAttributes([
@@ -71,19 +74,15 @@
 				Sample Custom Form
 			</h2>
 			
-			<pre class="mt-2"><code class="language-php">{{ file_get_contents(__DIR__.'/../Samples/CustomForm.php') }}</code></pre>
+			@sample('CustomForm.php')
 		</div>
 		<div class="w-2/5 px-1">
 			<h2 class="mb-0">
 				Sample Output
 			</h2>
 			
-			<pre class="mt-2 mb-0"><code class="language-php">@verbatim{{ Aire::scaffold(new CustomForm())
-	->bind([
-		'title' => 'Radical Candor',
-		'author' => 'Kim Scott',
-		'edition' => 2,
-	]) }}@endverbatim</code></pre>
+			@sample('snippets/scaffold-custom-form.blade.php')
+			
 			<div class="border rounded p-2 mt-2">
 				{{ Aire::scaffold(new Docs\Samples\CustomForm())->bind([
 					'title' => 'Radical Candor',
@@ -92,11 +91,6 @@
 				]) }}
 			</div>
 		</div>
-	</div>
-	
-	<div class="" style="width: 250px; height: 800px;">
-		<h2>Add New Author</h2>
-		{{ Aire::scaffold(new Docs\Samples\CustomForm()) }}
 	</div>
 	
 @endsection

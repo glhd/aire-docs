@@ -38,6 +38,7 @@ return [
 		Galahad\Aire\Support\AireServiceProvider::class,
 		GrahamCampbell\Markdown\MarkdownServiceProvider::class,
 		
+		Docs\DocsServiceProvider::class,
 		Docs\RouteServiceProvider::class,
 		
 	],
