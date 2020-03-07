@@ -36,12 +36,7 @@ class RouteServiceProvider extends ServiceProvider
 		Route::post('/authors', 'AuthorsController@store')->name('authors.store');
 		Route::put('/authors/{author}', 'AuthorsController@update')->name('authors.update');
 		
-		View::share(
-			'css_version',
-			app()->environment('production')
-				? md5_file(base_path('src/aire.css'))
-				: ''
-		);
+		View::share('css_version', md5_file(base_path('src/aire.css')));
 		
 		foreach ($files as $filename) {
 			$view = basename($filename, '.blade.php');
