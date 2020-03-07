@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 		View::share(
 			'css_version',
 			app()->environment('production')
-				? filemtime(base_path('src/aire.css'))
+				? md5_file(base_path('src/aire.css'))
 				: ''
 		);
 		
