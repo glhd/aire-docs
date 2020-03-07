@@ -55,6 +55,13 @@
 		Scaffolding Forms
 	</h1>
 	
+	<div class="mt-4 mb-8 p-6 border rounded leading-normal bg-yellow-100 border-yellow-300 text-yellow-800">
+		<strong>Please note:</strong> Scaffolding is an <strong>upcoming feature</strong> that is not quite ready
+		for production usage. Please <a href="https://twitter.com/inxilpro">let me know</a> if you have
+		any thoughts or requests for how the final API will work. This page exists mostly as a place to
+		discuss the feature while it’s in development.
+	</div>
+	
 	<p>
 		If you need to get started quickly, or just want a basic CRUD form that
 		doesn't have sophisticated design needs, you can use Aire's scaffolding
@@ -74,8 +81,6 @@
  */
 class Author extends Model
 {
-	protected $dateFormat = &#039;Y-m-d H:i:s&#039;;
-	
 	// Standard Laravel $casts are used to infer field type
 	protected $casts = [
 		&#039;is_favorite&#039; =&gt; &#039;bool&#039;,
@@ -97,8 +102,7 @@ class Author extends Model
 		];
 		
 		return $aire-&gt;select($genres, &#039;genre&#039;, &#039;Genre Best Known For&#039;)
-			-&gt;defaultValue(&#039;lf&#039;)
-			-&gt;addClass(&#039;bg-pink-100&#039;);
+			-&gt;defaultValue(&#039;lf&#039;);
 	}
 	
 	// If you&#039;re happy with Aire&#039;s inferred field but you need to change the label
@@ -148,7 +152,7 @@ class Author extends Model
 	
 	<div class="">
 				
-		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none bg-pink-100 text-gray-900" data-aire-component="select" name="genre" data-aire-for="genre" id="__aire-158-genre161">
+		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none text-gray-900" data-aire-component="select" name="genre" data-aire-for="genre" id="__aire-158-genre161">
 	
 		
 			
@@ -274,7 +278,7 @@ class Author extends Model
 	
 	<div class="">
 				
-		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none bg-pink-100 text-gray-900" data-aire-component="select" name="genre" data-aire-for="genre" id="__aire-172-genre175">
+		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none text-gray-900" data-aire-component="select" name="genre" data-aire-for="genre" id="__aire-172-genre175">
 	
 		
 			
@@ -330,7 +334,7 @@ class Author extends Model
 		
 </div>
 
-<div class="mb-6" data-aire-component="group" data-aire-for="last_read_at" value="2020-03-07 14:23:26">
+<div class="mb-6" data-aire-component="group" data-aire-for="last_read_at" value="2020-03-07 14:47:02">
 	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-172-last_read_at178">
 	Last Read At
 </label>
@@ -338,7 +342,7 @@ class Author extends Model
 	
 	<div class="">
 				
-		<input type="datetime-local" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="last_read_at" data-aire-for="last_read_at" value="2020-03-07T14:23" id="__aire-172-last_read_at178" />
+		<input type="datetime-local" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="last_read_at" data-aire-for="last_read_at" value="2020-03-07T14:47" id="__aire-172-last_read_at178" />
 
 			
 			</div>
@@ -362,7 +366,7 @@ class Author extends Model
 		</div>
 	</div>
 	
-	<h2>
+	<h2 class="mt-8 pt-8 border-t">
 		Custom Forms
 	</h2>
 	
@@ -382,22 +386,28 @@ class Author extends Model
 	// Use configureForm to set properties on the form object itself
 	public function configureForm(Form $form, Aire $aire) : void
 	{
-		$form-&gt;action(&#039;/book-demo&#039;)
+		$form-&gt;action(&#039;/books&#039;)
 			-&gt;patch()
 			-&gt;rules([
 				&#039;title&#039; =&gt; &#039;required|min:5&#039;,
 				&#039;author&#039; =&gt; &#039;required&#039;,
-				&#039;edition&#039; =&gt; &#039;nullable|int|min1&#039;,
+				&#039;edition&#039; =&gt; &#039;nullable|integer|min:1&#039;,
 			]);
 	}
 	
 	public function formFields(Aire $aire) : array
 	{
 		return [
-			&#039;name&#039; =&gt; $aire-&gt;input(&#039;name&#039;, &#039;Name&#039;),
-			&#039;author&#039; =&gt; $aire-&gt;number(&#039;p&#039;, &#039;Published Books&#039;)-&gt;step(1),
-			&#039;edition&#039; =&gt; $aire-&gt;checkbox(&#039;edition&#039;, &#039;Favorite&#039;),
-			&#039;f&#039; =&gt; $aire-&gt;submit(&#039;Create New Author&#039;),
+			&#039;title&#039; =&gt; $aire-&gt;input(&#039;title&#039;, &#039;Title of Book&#039;)
+				-&gt;placeholder(&#039;Book title&#039;),
+			&#039;author&#039; =&gt; $aire-&gt;input(&#039;author&#039;, &#039;Author&#039;)
+				-&gt;helpText(&#039;Please try to be consistent in name formatting&#039;),
+			&#039;edition&#039; =&gt; $aire-&gt;number(&#039;edition&#039;, &#039;Book Edition&#039;)
+				-&gt;min(1)
+				-&gt;step(1)
+				-&gt;defaultValue(1)
+				-&gt;groupAddClass(&#039;w-48&#039;),
+			&#039;submit&#039; =&gt; $aire-&gt;submit(&#039;Save Book&#039;),
 		];
 	}
 }</code></pre>
@@ -415,60 +425,61 @@ class Author extends Model
 	]) }}</code></pre>
 			
 			<div class="border rounded p-2 mt-2">
-				<form action="/book-demo" method="POST" class="" data-aire-component="form" data-aire-id="186">
+				<form action="/books" method="POST" class="" data-aire-component="form" data-aire-id="186">
 
 		
 			<input type="hidden" name="_method" value="PATCH" />
 		
-	<div class="mb-6" data-aire-component="group" data-aire-for="name">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-186-name187">
-	Name
+	<div class="mb-6" data-aire-component="group" data-aire-for="title" value="Radical Candor">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-186-title187">
+	Title of Book
 </label>
 
 	
 	<div class="">
 				
-		<input type="text" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="name" data-aire-for="name" id="__aire-186-name187" />
+		<input type="text" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="title" placeholder="Book title" data-aire-for="title" value="Radical Candor" id="__aire-186-title187" />
 
 			
 			</div>
 	
-	<ul class="list-reset mt-2 mb-3 hidden" data-aire-component="errors" data-aire-validation-key="group_errors" data-aire-for="name">
+	<ul class="list-reset mt-2 mb-3 hidden" data-aire-component="errors" data-aire-validation-key="group_errors" data-aire-for="title">
 			</ul>
 	
 		
 </div>
 
-<div class="mb-6" data-aire-component="group" data-aire-for="p">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-186-p190">
-	Published Books
+<div class="mb-6" data-aire-component="group" data-aire-for="author" value="Kim Scott">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-186-author190">
+	Author
 </label>
 
 	
 	<div class="">
 				
-		<input type="number" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="p" step="1" data-aire-for="p" id="__aire-186-p190" />
+		<input type="text" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="author" data-aire-for="author" value="Kim Scott" id="__aire-186-author190" />
 
 			
 			</div>
 	
-	<ul class="list-reset mt-2 mb-3 hidden" data-aire-component="errors" data-aire-validation-key="group_errors" data-aire-for="p">
+	<ul class="list-reset mt-2 mb-3 hidden" data-aire-component="errors" data-aire-validation-key="group_errors" data-aire-for="author">
 			</ul>
 	
+			<small class="block mt-1 font-normal text-sm text-gray-600" data-aire-component="help_text" data-aire-validation-key="group_help_text" data-aire-for="author">
+			Please try to be consistent in name formatting
+		</small>
 		
 </div>
 
-<div class="mb-6 custom-control custom-checkbox" data-aire-component="group" data-aire-for="edition" value="2">
-	
+<div class="mb-6 w-48" data-aire-component="group" data-aire-for="edition" value="2">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-186-edition193">
+	Book Edition
+</label>
+
 	
 	<div class="">
 				
-		<label class="flex items-baseline" data-aire-component="label" data-aire-validation-key="checkbox_label" data-aire-for="edition" for="__aire-186-edition193">
-	<input type="checkbox" value="1" class="pr-2" data-aire-component="checkbox" name="edition" data-aire-for="edition" id="__aire-186-edition193" checked />
-	<span class="ml-2 flex-1" data-aire-component="wrapper" data-aire-validation-key="checkbox_wrapper" data-aire-for="edition">
-		Favorite
-	</span>
-</label>
+		<input type="number" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="edition" min="1" step="1" value="2" data-aire-for="edition" id="__aire-186-edition193" />
 
 			
 			</div>
@@ -480,7 +491,7 @@ class Author extends Model
 </div>
 
 <button class="font-normal text-center whitespace-no-wrap align-middle select-none border leading-normal inline-block text-base rounded p-2 px-4 text-white bg-blue-600 border-blue-700 hover:bg-blue-700 hover:border-blue-900" data-aire-component="button" type="submit">
-	Create New Author
+	Save Book
 </button>
 
 	
@@ -497,7 +508,7 @@ class Author extends Model
 		
 			<script defer>
 			document.addEventListener('DOMContentLoaded', function() {
-				window.$aire186 = Aire.connect('[data-aire-id="186"]', {"title":"required|min:5","author":"required","edition":"nullable|int|min1"}, [], null);
+				window.$aire186 = Aire.connect('[data-aire-id="186"]', {"title":"required|min:5","author":"required","edition":"nullable|integer|min:1"}, [], null);
 			});
 			</script>
 		

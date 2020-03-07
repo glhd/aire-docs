@@ -3,7 +3,6 @@
 namespace Docs\Samples;
 
 use Galahad\Aire\Aire;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * DocBlock annotations are used to infer field type
@@ -12,8 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Author extends Model
 {
-	protected $dateFormat = 'Y-m-d H:i:s';
-	
 	// Standard Laravel $casts are used to infer field type
 	protected $casts = [
 		'is_favorite' => 'bool',
@@ -35,8 +32,7 @@ class Author extends Model
 		];
 		
 		return $aire->select($genres, 'genre', 'Genre Best Known For')
-			->defaultValue('lf')
-			->addClass('bg-pink-100');
+			->defaultValue('lf');
 	}
 	
 	// If you're happy with Aire's inferred field but you need to change the label

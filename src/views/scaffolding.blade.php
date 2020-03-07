@@ -10,6 +10,13 @@
 		Scaffolding Forms
 	</h1>
 	
+	<div class="mt-4 mb-8 p-6 border rounded leading-normal bg-yellow-100 border-yellow-300 text-yellow-800">
+		<strong>Please note:</strong> Scaffolding is an <strong>upcoming feature</strong> that is not quite ready
+		for production usage. Please <a href="https://twitter.com/inxilpro">let me know</a> if you have
+		any thoughts or requests for how the final API will work. This page exists mostly as a place to
+		discuss the feature while it’s in development.
+	</div>
+	
 	<p>
 		If you need to get started quickly, or just want a basic CRUD form that
 		doesn't have sophisticated design needs, you can use Aire's scaffolding
@@ -59,7 +66,7 @@
 		</div>
 	</div>
 	
-	<h2>
+	<h2 class="mt-8 pt-8 border-t">
 		Custom Forms
 	</h2>
 	

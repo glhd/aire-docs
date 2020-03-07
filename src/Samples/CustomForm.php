@@ -11,22 +11,28 @@ class CustomForm implements ConfiguresForm
 	// Use configureForm to set properties on the form object itself
 	public function configureForm(Form $form, Aire $aire) : void
 	{
-		$form->action('/book-demo')
+		$form->action('/books')
 			->patch()
 			->rules([
 				'title' => 'required|min:5',
 				'author' => 'required',
-				'edition' => 'nullable|int|min1',
+				'edition' => 'nullable|integer|min:1',
 			]);
 	}
 	
 	public function formFields(Aire $aire) : array
 	{
 		return [
-			'name' => $aire->input('name', 'Name'),
-			'author' => $aire->number('p', 'Published Books')->step(1),
-			'edition' => $aire->checkbox('edition', 'Favorite'),
-			'f' => $aire->submit('Create New Author'),
+			'title' => $aire->input('title', 'Title of Book')
+				->placeholder('Book title'),
+			'author' => $aire->input('author', 'Author')
+				->helpText('Please try to be consistent in name formatting'),
+			'edition' => $aire->number('edition', 'Book Edition')
+				->min(1)
+				->step(1)
+				->defaultValue(1)
+				->groupAddClass('w-48'),
+			'submit' => $aire->submit('Save Book'),
 		];
 	}
 }
