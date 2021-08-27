@@ -45,7 +45,7 @@
 		set via data binding or using the old form input if there was an error. If you want
 		to explicitly override the value, use the <code>value($value)</code> method. If, instead,
 		you just want to set a value to use if no bound/old value is available, use
-		the <code>defaultValue($value)</code> method.
+		the <code>defaultValue($value)</code> method (or <code>defaultChecked()</code> for checkboxes).
 	</p>
 	
 	<h2 class="mt-12">
