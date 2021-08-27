@@ -805,7 +805,10 @@ Aire::input()-&gt;label(&#039;Small Input&#039;)
 	<div id="component-checkbox" class="md:flex items-stretch max-w-full">
 		
 		<div class="md:w-1/2 relative flex items-center bg-gray-100 overflow-x-auto">
-			<pre class="my-0 border-0 rounded-none" style="overflow: visible"><code class="language-php text-xs md:text-sm">Aire::checkbox(&#039;checkbox&#039;, &#039;Confirm that you agree&#039;);</code></pre>
+			<pre class="my-0 border-0 rounded-none" style="overflow: visible"><code class="language-php text-xs md:text-sm">Aire::checkbox(&#039;checkbox&#039;, &#039;Confirm that you agree&#039;);
+
+Aire::checkbox(&#039;opt_out&#039;, &#039;Opt-out of annoying emails&#039;)
+  -&gt;defaultChecked();</code></pre>
 		</div>
 		
 		<div class="border-t md:border-t-0 md:w-1/2 md:border-l p-6 flex items-center">
@@ -826,6 +829,26 @@ Aire::input()-&gt;label(&#039;Small Input&#039;)
 			</div>
 	
 	<ul class="list-reset mt-2 mb-3 hidden" data-aire-component="errors" data-aire-validation-key="group_errors" data-aire-for="checkbox">
+			</ul>
+	
+		
+</div>
+<div class="mb-6 custom-control custom-checkbox" data-aire-component="group" data-aire-for="opt_out">
+	
+	
+	<div class="">
+				
+		<label class="flex items-baseline" data-aire-component="label" data-aire-validation-key="checkbox_label" data-aire-for="opt_out" for="__aire-30-opt_out110">
+	<input type="checkbox" value="1" class="pr-2" data-aire-component="checkbox" name="opt_out" checked data-aire-for="opt_out" id="__aire-30-opt_out110" />
+	<span class="ml-2 flex-1" data-aire-component="wrapper" data-aire-validation-key="checkbox_wrapper" data-aire-for="opt_out">
+		Opt-out of annoying emails
+	</span>
+</label>
+
+			
+			</div>
+	
+	<ul class="list-reset mt-2 mb-3 hidden" data-aire-component="errors" data-aire-validation-key="group_errors" data-aire-for="opt_out">
 			</ul>
 	
 		
@@ -854,14 +877,14 @@ Aire::select([1 =&gt; &#039;One&#039;, 2 =&gt; &#039;Two&#039;, 3 =&gt; &#039;Th
 		<div class="border-t md:border-t-0 md:w-1/2 md:border-l p-6 flex items-center">
 			<div class="flex-1">
 				<div class="mb-6" data-aire-component="group" data-aire-for="select">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-select110">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-select112">
 	Select
 </label>
 
 	
 	<div class="">
 				
-		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none text-gray-900" data-aire-component="select" name="select" data-aire-for="select" id="__aire-30-select110">
+		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none text-gray-900" data-aire-component="select" name="select" data-aire-for="select" id="__aire-30-select112">
 	
 		
 			
@@ -891,14 +914,14 @@ Aire::select([1 =&gt; &#039;One&#039;, 2 =&gt; &#039;Two&#039;, 3 =&gt; &#039;Th
 		
 </div>
 <div class="mb-6" data-aire-component="group" data-aire-for="select2">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-select2113">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-select2115">
 	Multi-Select
 </label>
 
 	
 	<div class="">
 				
-		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none text-gray-900" data-aire-component="select" name="select2[]" multiple data-aire-for="select2" id="__aire-30-select2113">
+		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none text-gray-900" data-aire-component="select" name="select2[]" multiple data-aire-for="select2" id="__aire-30-select2115">
 	
 		
 			
@@ -947,14 +970,14 @@ Aire::select([1 =&gt; &#039;One&#039;, 2 =&gt; &#039;Two&#039;, 3 =&gt; &#039;Th
 		<div class="border-t md:border-t-0 md:w-1/2 md:border-l p-6 flex items-center">
 			<div class="flex-1">
 				<div class="mb-6" data-aire-component="group">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-116">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-118">
 	Choose Your Timezone
 </label>
 
 	
 	<div class="">
 				
-		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none text-gray-900" data-aire-component="select" id="__aire-30-116">
+		<select class="block w-full p-2 leading-normal border rounded-sm bg-white appearance-none text-gray-900" data-aire-component="select" id="__aire-30-118">
 	
 		
 			
@@ -3116,14 +3139,14 @@ Aire::select([1 =&gt; &#039;One&#039;, 2 =&gt; &#039;Two&#039;, 3 =&gt; &#039;Th
 		<div class="border-t md:border-t-0 md:w-1/2 md:border-l p-6 flex items-center">
 			<div class="flex-1">
 				<div class="mb-6" data-aire-component="group" data-aire-for="range">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-range119">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-range121">
 	Range
 </label>
 
 	
 	<div class="">
 				
-		<input type="range" class="block w-full leading-normal bg-white border rounded-sm form-control-range p-2 text-base text-gray-900" data-aire-component="input" name="range" min="50" max="100" step="10" value="70" data-aire-for="range" id="__aire-30-range119" />
+		<input type="range" class="block w-full leading-normal bg-white border rounded-sm form-control-range p-2 text-base text-gray-900" data-aire-component="input" name="range" min="50" max="100" step="10" value="70" data-aire-for="range" id="__aire-30-range121" />
 
 			
 			</div>
@@ -3152,14 +3175,14 @@ Aire::select([1 =&gt; &#039;One&#039;, 2 =&gt; &#039;Two&#039;, 3 =&gt; &#039;Th
 		<div class="border-t md:border-t-0 md:w-1/2 md:border-l p-6 flex items-center">
 			<div class="flex-1">
 				<div class="mb-6" data-aire-component="group" data-aire-for="q">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-q122">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-q124">
 	Enter Your Query
 </label>
 
 	
 	<div class="">
 				
-		<input type="search" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="q" data-aire-for="q" id="__aire-30-q122" />
+		<input type="search" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="q" data-aire-for="q" id="__aire-30-q124" />
 
 			
 			</div>
@@ -3189,14 +3212,14 @@ Aire::select([1 =&gt; &#039;One&#039;, 2 =&gt; &#039;Two&#039;, 3 =&gt; &#039;Th
 		<div class="border-t md:border-t-0 md:w-1/2 md:border-l p-6 flex items-center">
 			<div class="flex-1">
 				<div class="mb-6" data-aire-component="group" data-aire-for="phone">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-phone125">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-phone127">
 	Enter Phone Number
 </label>
 
 	
 	<div class="">
 				
-		<input type="tel" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="phone" data-aire-for="phone" id="__aire-30-phone125" />
+		<input type="tel" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="phone" data-aire-for="phone" id="__aire-30-phone127" />
 
 			
 			</div>
@@ -3228,14 +3251,14 @@ Aire::select([1 =&gt; &#039;One&#039;, 2 =&gt; &#039;Two&#039;, 3 =&gt; &#039;Th
 		<div class="border-t md:border-t-0 md:w-1/2 md:border-l p-6 flex items-center">
 			<div class="flex-1">
 				<div class="mb-6" data-aire-component="group" data-aire-for="href">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-href128">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-href130">
 	Enter a URL
 </label>
 
 	
 	<div class="">
 				
-		<input type="url" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="href" data-aire-for="href" id="__aire-30-href128" />
+		<input type="url" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="href" data-aire-for="href" id="__aire-30-href130" />
 
 			
 			</div>
@@ -3267,14 +3290,14 @@ Aire::select([1 =&gt; &#039;One&#039;, 2 =&gt; &#039;Two&#039;, 3 =&gt; &#039;Th
 		<div class="border-t md:border-t-0 md:w-1/2 md:border-l p-6 flex items-center">
 			<div class="flex-1">
 				<div class="mb-6" data-aire-component="group" data-aire-for="color">
-	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-color131">
+	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-30-color133">
 	Pick a Color
 </label>
 
 	
 	<div class="">
 				
-		<input type="color" class="block leading-normal bg-white border rounded-sm w-16 h-16 p-2 text-base text-gray-900" data-aire-component="input" name="color" data-aire-for="color" id="__aire-30-color131" />
+		<input type="color" class="block leading-normal bg-white border rounded-sm w-16 h-16 p-2 text-base text-gray-900" data-aire-component="input" name="color" data-aire-for="color" id="__aire-30-color133" />
 
 			
 			</div>
