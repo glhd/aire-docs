@@ -22,6 +22,9 @@
 	<link rel="stylesheet"
 	      href="https://use.fontawesome.com/releases/v5.12.1/css/fontawesome.css"
 	      crossorigin="anonymous" />
+	<link rel="stylesheet" 
+	      href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha"
+	      crossorigin="anonymous" />
 	
 	</head>
 
@@ -334,7 +337,7 @@ class Author extends Model
 		
 </div>
 
-<div class="mb-6" data-aire-component="group" data-aire-for="last_read_at" value="2021-08-27 14:05:55">
+<div class="mb-6" data-aire-component="group" data-aire-for="last_read_at" value="2021-11-27 23:50:30">
 	<label class="inline-block mb-2 font-semibold cursor-pointer text-base" data-aire-component="label" for="__aire-174-last_read_at180">
 	Last Read At
 </label>
@@ -342,7 +345,7 @@ class Author extends Model
 	
 	<div class="">
 				
-		<input type="datetime-local" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="last_read_at" data-aire-for="last_read_at" value="2021-08-27T14:05" id="__aire-174-last_read_at180" />
+		<input type="datetime-local" class="block w-full leading-normal bg-white border rounded-sm p-2 text-base text-gray-900" data-aire-component="input" name="last_read_at" data-aire-for="last_read_at" value="2021-11-27T23:50" id="__aire-174-last_read_at180" />
 
 			
 			</div>
@@ -546,6 +549,10 @@ class Author extends Model
 	</h2>
 </div>
 
+<div class="mt-8">
+	<div id="docsearch"></div>
+</div>
+
 <ul class="list-reset mt-8 font-semibold">
 	
 	<li class="group mb-4 lg:hidden">
@@ -711,6 +718,17 @@ class Author extends Model
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-php.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-php-extras.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
+<script type="text/javascript">
+docsearch({
+	appId: 'BH4D9OD16A',
+	apiKey: 'dba0799640cd22acaf60360ce3c39eac',
+	indexName: 'airephp',
+	container: '#docsearch',
+	debug: false, 
+});
+</script>
 
 <script>
 (function(f, a, t, h, o, m){
