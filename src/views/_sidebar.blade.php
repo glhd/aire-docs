@@ -10,6 +10,10 @@
 	</h2>
 </div>
 
+<div class="mt-8">
+	<div id="docsearch"></div>
+</div>
+
 <ul class="list-reset mt-8 font-semibold">
 	
 	<li class="group mb-4 lg:hidden">

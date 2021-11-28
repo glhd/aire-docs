@@ -21,6 +21,9 @@
 	<link rel="stylesheet"
 	      href="https://use.fontawesome.com/releases/v5.12.1/css/fontawesome.css"
 	      crossorigin="anonymous" />
+	<link rel="stylesheet" 
+	      href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha"
+	      crossorigin="anonymous" />
 	
 	@stack('head')
 </head>
@@ -54,6 +57,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-php.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-php-extras.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
+<script type="text/javascript">
+docsearch({
+	appId: 'BH4D9OD16A',
+	apiKey: 'dba0799640cd22acaf60360ce3c39eac',
+	indexName: 'airephp',
+	container: '#docsearch',
+	debug: false, 
+});
+</script>
 
 <script>
 (function(f, a, t, h, o, m){
