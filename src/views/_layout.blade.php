@@ -26,6 +26,8 @@
 	      crossorigin="anonymous" />
 	
 	@stack('head')
+<script defer data-domain="airephp.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+
 </head>
 
 <body class="font-sans font-base leading-normal antialiased">
