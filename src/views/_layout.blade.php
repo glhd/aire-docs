@@ -22,7 +22,7 @@
 	      href="https://use.fontawesome.com/releases/v5.12.1/css/fontawesome.css"
 	      crossorigin="anonymous" />
 	<link rel="stylesheet" 
-	      href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha"
+	      href="https://cdn.jsdelivr.net/npm/@docsearch/css"
 	      crossorigin="anonymous" />
 	
 	@stack('head')
@@ -58,7 +58,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-php-extras.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.min.js"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@docsearch/js"></script>
 <script type="text/javascript">
 docsearch({
 	appId: 'BH4D9OD16A',
@@ -69,19 +69,7 @@ docsearch({
 });
 </script>
 
-<script>
-(function(f, a, t, h, o, m){
-	a[h]=a[h]||function(){
-		(a[h].q=a[h].q||[]).push(arguments)
-	};
-	o=f.createElement('script'),
-		m=f.getElementsByTagName('script')[0];
-	o.async=1; o.src=t; o.id='fathom-script';
-	m.parentNode.insertBefore(o,m)
-})(document, window, 'https://cdn.usefathom.com/tracker.js', 'fathom');
-fathom('set', 'siteId', 'CFRXAHNE');
-fathom('trackPageview');
-</script>
+<script defer data-domain="airephp.com" src="https://plausible.io/js/script.outbound-links.js"></script>
 
 </body>
 
